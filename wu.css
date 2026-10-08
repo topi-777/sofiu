@@ -1,0 +1,359 @@
+/* ===================================================
+   VARIABLES DE COLOR (GAMA LILA Y BLANCO)
+   =================================================== */
+:root {
+  /* Lilas y Púrpuras Suaves */
+  --lila-dark: #4a3e6d;      /* Encabezados y pie de página */
+  --lila-main: #8a76b8;      /* Color principal y barras */
+  --lila-mid: #a898cc;       /* Bordes y acentos secundarios */
+  --lila-light: #f1edfa;     /* Fondo de encabezados de tarjetas */
+  --lila-pale: #f9f7fc;      /* Fondo hover en cuestionario */
+  
+  /* Blanco y Neutros */
+  --white: #ffffff;
+  --black-text: #232029;
+  --gray-text: #524d5e;
+  --gray-border: #e6e2f0;
+
+  /* Sombra y Estilo */
+  --shadow-card: 0 4px 10px rgba(138, 118, 184, 0.08);
+  --shadow-hover: 0 8px 20px rgba(138, 118, 184, 0.15);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* RESET BÁSICO Y ESTILOS GLOBALES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf8ff;
+  color: var(--black-text);
+  line-height: 1.6;
+}
+
+/* CLASES DE UTILIDAD */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* ENCABEZADO (MAIN-HEADER) */
+.main-header {
+  background: linear-gradient(135deg, var(--lila-dark), var(--lila-main));
+  color: var(--white);
+  padding: 40px 0;
+  border-bottom: 5px solid var(--lila-mid);
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-area h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.logo-area .subtitle {
+  font-size: 1.1rem;
+  color: var(--lila-light);
+  font-weight: 300;
+}
+
+.student-badge {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  min-width: 280px;
+}
+
+.student-badge p {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.student-badge p strong {
+  color: var(--lila-light);
+}
+
+.student-badge .institution {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* NAVEGACIÓN (NAVBAR) */
+.navbar {
+  background-color: var(--lila-main);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(74, 62, 109, 0.15);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar li a {
+  display: block;
+  padding: 18px 25px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar li a:hover {
+  background-color: var(--lila-dark);
+  color: var(--white);
+}
+
+.navbar li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: var(--white);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.navbar li a:hover::after {
+  width: 80%;
+}
+
+/* CONTENIDO PRINCIPAL */
+.main-content {
+  padding: 40px 0;
+}
+
+.content-card {
+  margin-bottom: 30px;
+  overflow: hidden;
+  border: 1px solid var(--gray-border);
+}
+
+.card-header {
+  background-color: var(--lila-light);
+  padding: 15px 25px;
+  border-bottom: 2px solid var(--lila-mid);
+}
+
+.card-header h2 {
+  color: var(--lila-dark);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.card-body {
+  padding: 30px 25px;
+}
+
+.card-body p {
+  margin-bottom: 15px;
+  color: var(--gray-text);
+  font-size: 1rem;
+}
+
+.card-body p strong {
+  color: var(--lila-dark);
+}
+
+/* GRID DE CONCEPTOS */
+.grid-conceptos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.concept-item {
+  padding: 20px;
+  border: 1px solid var(--gray-border);
+}
+
+.concept-item:hover {
+  border-color: var(--lila-main);
+  transform: translateY(-3px);
+}
+
+.concept-item h3 {
+  color: var(--lila-dark);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--lila-mid);
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.concept-item p {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+}
+
+/* CUESTIONARIO */
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question-item {
+  padding: 20px;
+  border-left: 5px solid var(--lila-mid);
+  transition: var(--transition);
+}
+
+.question-item:hover {
+  border-left-color: var(--lila-main);
+  background-color: var(--lila-pale);
+}
+
+.question-item h3 {
+  color: var(--lila-dark);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.question-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  color: var(--black-text);
+}
+
+.highlight {
+  font-weight: 700;
+  color: var(--lila-dark);
+}
+
+/* BLOQUE DE CÓDIGO JS */
+.code-wrapper {
+  background-color: #382e54;
+  padding: 20px;
+  border-left: 5px solid var(--lila-mid);
+  overflow-x: auto;
+}
+
+.code-wrapper pre code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #f1edfa;
+}
+
+/* LISTAS DE REFERENCIAS */
+.styled-list {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.styled-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  color: var(--gray-text);
+}
+
+.styled-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--lila-main);
+  font-size: 1.1rem;
+}
+
+.styled-list li a {
+  color: var(--lila-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.styled-list li a:hover {
+  color: var(--lila-main);
+  text-decoration: underline;
+}
+
+/* PIE DE PÁGINA */
+.main-footer {
+  background-color: var(--lila-dark);
+  color: var(--white);
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 5px solid var(--lila-mid);
+}
+
+.footer-content p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+
+.footer-content .school {
+  font-weight: 600;
+  color: var(--lila-light);
+}
+
+/* ADAPTACIÓN MÓVIL */
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo-area h1 {
+    font-size: 2.2rem;
+  }
+  
+  .student-badge {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .navbar li a {
+    padding: 12px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .card-body {
+    padding: 20px 15px;
+  }
+  
+  .card-header h2 {
+    font-size: 1.4rem;
+  }
+}

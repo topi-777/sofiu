@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo que aprendí del video - Sofia Gimenez</title>
+    <!-- Enlazamos el archivo CSS actualizado -->
+    <link rel="stylesheet" href="wu.css">
+    <!-- Agregamos una fuente moderna desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Nuevo Encabezado con Diseño Integrado -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <h1>Mi Aprendizaje</h1>
+                <p class="subtitle">Trabajo Práctico: Resumen de Video</p>
+            </div>
+            <div class="student-badge card">
+                <p><strong>Estudiante:</strong> Sofia Gimenez</p>
+                <p><strong>Curso:</strong> 2.º 6ta BTI</p>
+                <p class="institution">CNAE - Asunción Escalada</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de Navegación Sticky -->
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#introduccion">Inicio</a></li>
+                <li><a href="#conceptos">Conceptos</a></li>
+                <li><a href="#cuestionario">Cuestionario</a></li>
+                <li><a href="#aplicacion">Código</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+                <li><a href="#fuentes">Fuentes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal con Márgenes -->
+    <main class="container main-content">
+        
+        <!-- Sección Introducción -->
+        <section id="introduccion" class="content-card card">
+            <div class="card-header">
+                <h2>Introducción</h2>
+            </div>
+            <div class="card-body">
+                <p>El video de Fazt Code explica qué es <strong>Supabase</strong>, una gran alternativa a Firebase. Muestra cómo crear una cuenta en la nube para tener una base de datos, usuarios y almacenamiento al instante.</p>
+                <p>El autor crea una tabla con productos (laptop, monitor y mouse) y demuestra cómo la plataforma genera una REST API automáticamente. También explica cómo probarla con Postman y la importancia de proteger los datos con seguridad RLS.</p>
+            </div>
+        </section>
+
+        <!-- Sección Conceptos -->
+        <section id="conceptos" class="content-card card">
+            <div class="card-header">
+                <h2>Conceptos Fundamentales</h2>
+            </div>
+            <div class="card-body grid-conceptos">
+                <div class="concept-item card">
+                    <h3>1. Supabase</h3>
+                    <p>Plataforma en la nube que ofrece backend completo (base de datos, usuarios y archivos), ideal como alternativa a Firebase.</p>
+                </div>
+                <div class="concept-item card">
+                    <h3>2. PostgreSQL</h3>
+                    <p>Base de datos relacional basada en SQL que organiza la información en tablas con filas y columnas.</p>
+                </div>
+                <div class="concept-item card">
+                    <h3>3. REST API Automática</h3>
+                    <p>Enlaces que se crean solos por cada tabla para consultar, agregar o borrar datos mediante peticiones web.</p>
+                </div>
+                <div class="concept-item card">
+                    <h3>4. API Key</h3>
+                    <p>Clave de seguridad obligatoria (enviada en las cabeceras) que permite que las aplicaciones consulten la API.</p>
+                </div>
+                <div class="concept-item card">
+                    <h3>5. RLS (Row Level Security)</h3>
+                    <p>Reglas de seguridad para controlar exactamente qué usuarios pueden leer o modificar los datos de las tablas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Cuestionario -->
+        <section id="cuestionario" class="content-card card">
+            <div class="card-header">
+                <h2>Cuestionario Resuelto</h2>
+            </div>
+            <div class="card-body question-list">
+                
+                <div class="question-item card">
+                    <h3>1. ¿Cuál es el tema principal del video? Explica de qué trata.</h3>
+                    <p>Trata sobre Supabase y su funcionamiento básico. Muestra cómo crear una base de datos en pocos minutos, generar una API automática y proteger los datos con reglas de seguridad.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>2. ¿Qué problema o necesidad tecnológica se aborda?</h3>
+                    <p>Evita tener que programar un backend desde cero. Además, soluciona el problema de seguridad al evitar que cualquier persona externa robe o altere los datos públicos.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>3. ¿Cuáles son los cinco conceptos más importantes? Define cada uno.</h3>
+                    <p>
+                        <span class="highlight">1. Supabase:</span> Backend rápido en la nube.<br>
+                        <span class="highlight">2. PostgreSQL:</span> Base de datos en formato de tablas.<br>
+                        <span class="highlight">3. REST API:</span> Conexión automática para leer y escribir datos.<br>
+                        <span class="highlight">4. API key:</span> Contraseña pública para acceder a la API.<br>
+                        <span class="highlight">5. RLS:</span> Filtros de seguridad para las filas de las tablas.
+                    </p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>4. ¿Qué herramientas, programas o tecnologías se mencionan y para qué sirven?</h3>
+                    <p>Se usan Supabase (para el backend), GitHub (para iniciar sesión), PostgreSQL (para las tablas), Postman (para probar las peticiones web) y bibliotecas para JavaScript.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>5. ¿Qué procedimientos o pasos se explican? Preséntalos en orden.</h3>
+                    <p>Registrarse en Supabase con GitHub, crear un proyecto nuevo, crear una tabla de productos, cargar filas (laptop, monitor, mouse), copiar el enlace de la API, probarlo en Postman, activar la seguridad RLS y configurar políticas de lectura.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>6. ¿Qué ejemplos prácticos aparecen? Explica uno detalladamente.</h3>
+                    <p>El ejemplo central es una tabla de productos. Al consultarla sin seguridad muestra los datos, pero al activar RLS sin reglas, la respuesta sale vacía, demostrando cómo actúan los permisos.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>7. ¿Qué conocimientos previos son necesarios para comprender lo explicado?</h3>
+                    <p>Saber qué es una base de datos, entender cómo funcionan las peticiones web (API REST y formato JSON) y tener nociones básicas de herramientas como Postman.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>8. ¿Qué ventajas o beneficios ofrece la tecnología o procedimiento?</h3>
+                    <p>Ahorra tiempo de programación, crea APIs de forma automática, usa bases de datos potentes y ofrece un plan gratuito excelente para prácticas.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>9. ¿Qué dificultades, errores o precauciones deben considerarse?</h3>
+                    <p>Cuidado con exponer las claves públicas y recordar que si activas RLS sin crear políticas, la app no mostrará ningún dato (devuelve una lista vacía).</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>10. ¿Cómo aplicarías lo aprendido en un proyecto informático real?</h3>
+                    <p>Lo usaría para guardar datos en sistemas escolares o de inventario, conectando una página web con Supabase y configurando reglas de seguridad para que solo usuarios autorizados puedan modificar la información.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>11. ¿Qué parte del video consideras más importante y por qué?</h3>
+                    <p>La parte de seguridad con RLS, porque enseña que una página funcione no significa que sea segura; hay que controlar bien quién accede a los datos.</p>
+                </div>
+
+                <div class="question-item card">
+                    <h3>12. ¿Qué conocimientos nuevos adquiriste y cómo los explicarías a otra persona?</h3>
+                    <p>Aprendí a conectar una web a una base de datos en la nube sin programar servidores. A otros se lo explicaría como una herramienta que te da direcciones web listas para consultar tus datos con total seguridad.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Aplicación Código -->
+        <section id="aplicacion" class="content-card card">
+            <div class="card-header">
+                <h2>Aplicación Práctica (Código JS)</h2>
+            </div>
+            <div class="card-body">
+                <p>Ejemplo corto de código para consultar los datos desde JavaScript:</p>
+                <div class="code-wrapper card">
+                    <pre><code>const
