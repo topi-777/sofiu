@@ -4,169 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo que aprendí del video - Sofia Gimenez</title>
-    <!-- Enlazamos el archivo CSS actualizado -->
     <link rel="stylesheet" href="wu.css">
-    <!-- Agregamos una fuente moderna desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Nuevo Encabezado con Diseño Integrado -->
+    <!-- Encabezado -->
     <header class="main-header">
         <div class="container header-flex">
             <div class="logo-area">
-                <h1>Mi Aprendizaje</h1>
-                <p class="subtitle">Trabajo Práctico: Resumen de Video</p>
+                <p class="eyebrow">Trabajo Práctico: Video y Página Web</p>
+                <h1>Lo que aprendí del video</h1>
+                <p class="subtitle">Supabase: base de datos, API y seguridad en la nube</p>
             </div>
             <div class="student-badge card">
                 <p><strong>Estudiante:</strong> Sofia Gimenez</p>
                 <p><strong>Curso:</strong> 2.º 6ta BTI</p>
+                <p><strong>Asignatura:</strong> Software / Desarrollo Web</p>
                 <p class="institution">CNAE - Asunción Escalada</p>
             </div>
         </div>
     </header>
 
-    <!-- Barra de Navegación Sticky -->
-    <nav class="navbar">
+    <!-- Menú -->
+    <nav class="navbar" aria-label="Menú principal">
         <div class="container">
             <ul>
                 <li><a href="#introduccion">Inicio</a></li>
                 <li><a href="#conceptos">Conceptos</a></li>
                 <li><a href="#cuestionario">Cuestionario</a></li>
-                <li><a href="#aplicacion">Código</a></li>
+                <li><a href="#recursos">Recursos visuales</a></li>
+                <li><a href="#aplicacion">Aplicación</a></li>
                 <li><a href="#conclusion">Conclusión</a></li>
                 <li><a href="#fuentes">Fuentes</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Contenedor Principal con Márgenes -->
     <main class="container main-content">
-        
-        <!-- Sección Introducción -->
+
+        <!-- Introducción -->
         <section id="introduccion" class="content-card card">
-            <div class="card-header">
-                <h2>Introducción</h2>
-            </div>
+            <div class="card-header"><h2>Introducción</h2></div>
             <div class="card-body">
-                <p>El video de Fazt Code explica qué es <strong>Supabase</strong>, una gran alternativa a Firebase. Muestra cómo crear una cuenta en la nube para tener una base de datos, usuarios y almacenamiento al instante.</p>
-                <p>El autor crea una tabla con productos (laptop, monitor y mouse) y demuestra cómo la plataforma genera una REST API automáticamente. También explica cómo probarla con Postman y la importancia de proteger los datos con seguridad RLS.</p>
+                <p>El video explica qué es <strong>Supabase</strong>, una plataforma en la nube que funciona como alternativa a Firebase y que entrega una base de datos <strong>PostgreSQL</strong>, autenticación de usuarios y una API lista para usar, todo desde el navegador.</p>
+                <p>Durante el video se crea un proyecto, se arma una tabla de productos (<em>products</em>) con datos como laptop, monitor y mouse, y se muestra cómo Supabase genera una <strong>REST API</strong> automática. Después se prueba con <strong>Postman</strong> (leer, insertar, actualizar y borrar) y se termina con lo más importante: proteger los datos con <strong>RLS (Row Level Security)</strong>, políticas y usuarios autenticados con tokens <strong>JWT</strong>.</p>
             </div>
         </section>
 
-        <!-- Sección Conceptos -->
+        <!-- Conceptos -->
         <section id="conceptos" class="content-card card">
-            <div class="card-header">
-                <h2>Conceptos Fundamentales</h2>
-            </div>
+            <div class="card-header"><h2>Conceptos Fundamentales</h2></div>
             <div class="card-body grid-conceptos">
                 <div class="concept-item card">
                     <h3>1. Supabase</h3>
-                    <p>Plataforma en la nube que ofrece backend completo (base de datos, usuarios y archivos), ideal como alternativa a Firebase.</p>
+                    <p>Plataforma en la nube que ofrece un backend completo (base de datos, usuarios, archivos y funciones) sin tener que programar ni mantener un servidor propio.</p>
                 </div>
                 <div class="concept-item card">
                     <h3>2. PostgreSQL</h3>
-                    <p>Base de datos relacional basada en SQL que organiza la información en tablas con filas y columnas.</p>
+                    <p>Base de datos relacional que guarda la información en tablas con filas y columnas. Es el "motor" que usa Supabase por dentro.</p>
                 </div>
                 <div class="concept-item card">
-                    <h3>3. REST API Automática</h3>
-                    <p>Enlaces que se crean solos por cada tabla para consultar, agregar o borrar datos mediante peticiones web.</p>
+                    <h3>3. REST API automática</h3>
+                    <p>Direcciones web que Supabase crea solas para cada tabla (con PostgREST), para leer, agregar, modificar o borrar datos con peticiones GET, POST, PATCH y DELETE.</p>
                 </div>
                 <div class="concept-item card">
                     <h3>4. API Key</h3>
-                    <p>Clave de seguridad obligatoria (enviada en las cabeceras) que permite que las aplicaciones consulten la API.</p>
+                    <p>Clave que se envía en las cabeceras (<code>apikey</code> y <code>Authorization</code>) para identificar a la aplicación que consulta la API. La clave pública (anon) no debe considerarse un secreto, por eso hace falta RLS.</p>
                 </div>
                 <div class="concept-item card">
                     <h3>5. RLS (Row Level Security)</h3>
-                    <p>Reglas de seguridad para controlar exactamente qué usuarios pueden leer o modificar los datos de las tablas.</p>
+                    <p>Seguridad a nivel de fila: reglas (políticas) que deciden qué usuarios pueden ver, insertar, actualizar o borrar cada fila de una tabla.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sección Cuestionario -->
+        <!-- Cuestionario -->
         <section id="cuestionario" class="content-card card">
-            <div class="card-header">
-                <h2>Cuestionario Resuelto</h2>
-            </div>
+            <div class="card-header"><h2>Cuestionario Resuelto</h2></div>
             <div class="card-body question-list">
-                
+
                 <div class="question-item card">
                     <h3>1. ¿Cuál es el tema principal del video? Explica de qué trata.</h3>
-                    <p>Trata sobre Supabase y su funcionamiento básico. Muestra cómo crear una base de datos en pocos minutos, generar una API automática y proteger los datos con reglas de seguridad.</p>
+                    <p>El tema principal es <strong>Supabase</strong> y cómo usarlo como backend. El video muestra desde cero cómo crear un proyecto, armar una tabla, obtener una API automática, probarla con Postman y protegerla con RLS y usuarios autenticados.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>2. ¿Qué problema o necesidad tecnológica se aborda?</h3>
-                    <p>Evita tener que programar un backend desde cero. Además, soluciona el problema de seguridad al evitar que cualquier persona externa robe o altere los datos públicos.</p>
+                    <p>Crear un backend desde cero (servidor, base de datos, usuarios y API) lleva mucho tiempo. Supabase lo resuelve en minutos. Además, se aborda un problema de seguridad: si la API es pública, cualquier persona con la clave podría leer o modificar los datos, por eso se necesitan reglas de acceso.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>3. ¿Cuáles son los cinco conceptos más importantes? Define cada uno.</h3>
-                    <p>
-                        <span class="highlight">1. Supabase:</span> Backend rápido en la nube.<br>
-                        <span class="highlight">2. PostgreSQL:</span> Base de datos en formato de tablas.<br>
-                        <span class="highlight">3. REST API:</span> Conexión automática para leer y escribir datos.<br>
-                        <span class="highlight">4. API key:</span> Contraseña pública para acceder a la API.<br>
-                        <span class="highlight">5. RLS:</span> Filtros de seguridad para las filas de las tablas.
-                    </p>
+                    <ol>
+                        <li><span class="highlight">Supabase:</span> backend en la nube con base de datos, auth y API.</li>
+                        <li><span class="highlight">PostgreSQL:</span> base de datos relacional organizada en tablas.</li>
+                        <li><span class="highlight">REST API:</span> enlaces automáticos para leer y escribir datos con peticiones web.</li>
+                        <li><span class="highlight">API key / JWT:</span> la clave identifica a la app; el token JWT identifica al usuario que inició sesión.</li>
+                        <li><span class="highlight">RLS y políticas:</span> reglas que filtran qué filas puede ver o cambiar cada usuario.</li>
+                    </ol>
                 </div>
 
                 <div class="question-item card">
                     <h3>4. ¿Qué herramientas, programas o tecnologías se mencionan y para qué sirven?</h3>
-                    <p>Se usan Supabase (para el backend), GitHub (para iniciar sesión), PostgreSQL (para las tablas), Postman (para probar las peticiones web) y bibliotecas para JavaScript.</p>
+                    <ul>
+                        <li><strong>Supabase:</strong> plataforma donde se crea el proyecto y la base de datos.</li>
+                        <li><strong>GitHub:</strong> se usa para iniciar sesión en Supabase.</li>
+                        <li><strong>PostgreSQL:</strong> guarda los datos en tablas.</li>
+                        <li><strong>PostgREST:</strong> genera la API REST a partir de las tablas.</li>
+                        <li><strong>Postman:</strong> programa para probar las peticiones a la API.</li>
+                        <li><strong>JWT (jwt.io):</strong> sitio para ver cómo se decodifica un token de sesión.</li>
+                        <li><strong>JavaScript (supabase-js):</strong> biblioteca para usar Supabase desde una página web.</li>
+                    </ul>
                 </div>
 
                 <div class="question-item card">
                     <h3>5. ¿Qué procedimientos o pasos se explican? Preséntalos en orden.</h3>
-                    <p>Registrarse en Supabase con GitHub, crear un proyecto nuevo, crear una tabla de productos, cargar filas (laptop, monitor, mouse), copiar el enlace de la API, probarlo en Postman, activar la seguridad RLS y configurar políticas de lectura.</p>
+                    <ol>
+                        <li>Entrar a Supabase e iniciar sesión con GitHub.</li>
+                        <li>Crear un proyecto nuevo (nombre, contraseña de la base de datos, región y plan gratuito).</li>
+                        <li>Crear la tabla <code>products</code> con columnas <code>id</code>, <code>created_at</code> y <code>name</code>.</li>
+                        <li>Cargar filas de ejemplo (laptop, monitor, mouse).</li>
+                        <li>Abrir la documentación de la API (API Docs) y copiar la URL y la clave.</li>
+                        <li>Probar la API en Postman con las cabeceras <code>apikey</code> y <code>Authorization</code>.</li>
+                        <li>Activar RLS y crear políticas (por ejemplo, lectura para todos).</li>
+                        <li>Agregar la columna <code>user_id</code> y crear políticas para insertar, actualizar y borrar solo lo propio.</li>
+                        <li>Probar con un usuario autenticado y su token JWT.</li>
+                    </ol>
                 </div>
 
                 <div class="question-item card">
                     <h3>6. ¿Qué ejemplos prácticos aparecen? Explica uno detalladamente.</h3>
-                    <p>El ejemplo central es una tabla de productos. Al consultarla sin seguridad muestra los datos, pero al activar RLS sin reglas, la respuesta sale vacía, demostrando cómo actúan los permisos.</p>
+                    <p>Aparece la tabla <strong>products</strong>, las peticiones en Postman (GET, POST, PATCH y DELETE) y las políticas de RLS. <strong>Ejemplo detallado:</strong> primero se consulta la tabla sin seguridad y la API devuelve los productos. Luego se activa RLS sin crear ninguna política y la misma consulta devuelve una lista vacía, porque nadie tiene permiso. Después se crea una política de lectura y los datos vuelven a aparecer. Así se ve cómo las políticas controlan el acceso. (Ver las imágenes en <a href="#recursos">Recursos visuales</a>).</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>7. ¿Qué conocimientos previos son necesarios para comprender lo explicado?</h3>
-                    <p>Saber qué es una base de datos, entender cómo funcionan las peticiones web (API REST y formato JSON) y tener nociones básicas de herramientas como Postman.</p>
+                    <p>Hay que saber qué es una base de datos con tablas, filas y columnas; tener nociones de cómo funcionan las peticiones web (GET, POST, JSON); y conocer algo de JavaScript y de herramientas como el navegador y Postman. También ayuda saber qué es un usuario autenticado.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>8. ¿Qué ventajas o beneficios ofrece la tecnología o procedimiento?</h3>
-                    <p>Ahorra tiempo de programación, crea APIs de forma automática, usa bases de datos potentes y ofrece un plan gratuito excelente para prácticas.</p>
+                    <p>Ahorra tiempo porque no hay que programar el servidor; la API se crea sola y se actualiza cuando cambian las tablas; usa PostgreSQL, que es una base de datos potente; trae autenticación de usuarios incorporada; y tiene un plan gratuito muy útil para aprender y hacer prácticas.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>9. ¿Qué dificultades, errores o precauciones deben considerarse?</h3>
-                    <p>Cuidado con exponer las claves públicas y recordar que si activas RLS sin crear políticas, la app no mostrará ningún dato (devuelve una lista vacía).</p>
+                    <p>Si se deja la tabla sin RLS, cualquiera con la clave pública puede acceder a los datos. Si se activa RLS y no se crea ninguna política, la API devuelve una lista vacía y parece que "no funciona". También hay que tener cuidado de no exponer claves privadas (como la <em>service role</em>) y de escribir bien las políticas para que cada usuario solo toque sus propias filas.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>10. ¿Cómo aplicarías lo aprendido en un proyecto informático real?</h3>
-                    <p>Lo usaría para guardar datos en sistemas escolares o de inventario, conectando una página web con Supabase y configurando reglas de seguridad para que solo usuarios autorizados puedan modificar la información.</p>
+                    <p>Lo aplicaría en un sistema de inventario o de gestión (por ejemplo, para un taller, un comercio o un sistema escolar). Crearía las tablas en Supabase, conectaría mi página web con JavaScript y activaría RLS para que cada usuario solo vea y modifique la información que le corresponde.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>11. ¿Qué parte del video consideras más importante y por qué?</h3>
-                    <p>La parte de seguridad con RLS, porque enseña que una página funcione no significa que sea segura; hay que controlar bien quién accede a los datos.</p>
+                    <p>La parte de seguridad con <strong>RLS y políticas</strong>. Crear la API es fácil, pero lo importante es que los datos estén protegidos. Que una página funcione no significa que sea segura: hay que controlar quién puede leer, insertar, modificar o borrar.</p>
                 </div>
 
                 <div class="question-item card">
                     <h3>12. ¿Qué conocimientos nuevos adquiriste y cómo los explicarías a otra persona?</h3>
-                    <p>Aprendí a conectar una web a una base de datos en la nube sin programar servidores. A otros se lo explicaría como una herramienta que te da direcciones web listas para consultar tus datos con total seguridad.</p>
+                    <p>Aprendí que una base de datos en la nube puede generar su propia API y que la seguridad se configura con reglas por fila. Se lo explicaría así: <em>"Supabase es como un armario con cajones (tablas). La API es la puerta para pedir cosas, y RLS es el guardia que decide quién puede abrir cada cajón"</em>.</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- Sección Aplicación Código -->
-        <section id="aplicacion" class="content-card card">
-            <div class="card-header">
-                <h2>Aplicación Práctica (Código JS)</h2>
-            </div>
+        <!-- Recursos visuales -->
+        <section id="recursos" class="content-card card">
+            <div class="card-header"><h2>Recursos Visuales</h2></div>
             <div class="card-body">
-                <p>Ejemplo corto de código para consultar los datos desde JavaScript:</p>
+                <p>Imágenes y diagramas que ilustran los ejemplos del video:</p>
+                <div class="figure-grid">
+                    <figure class="figure-card card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNzIwIDI2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRpYWdyYW1hOiBsYSBhcGxpY2FjacOzbiB3ZWIgY29uc3VsdGEgbGEgUkVTVCBBUEkgZGUgU3VwYWJhc2UsIHF1ZSBsZWUgbGEgYmFzZSBkZSBkYXRvcyBQb3N0Z3JlU1FMIj4KPGRlZnM+PG1hcmtlciBpZD0iYSIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjEwIiByZWZYPSI4IiByZWZZPSI1IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzBiNmZhNCIvPjwvbWFya2VyPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlNmY1ZmQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjZmVhZmEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSIyNjAiIHJ4PSIxOCIgZmlsbD0iI2ZmZiIvPgo8ZyBmb250LWZhbWlseT0iUG9wcGlucyxBcmlhbCxzYW5zLXNlcmlmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4KPHJlY3QgeD0iMjAiIHk9IjcwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjExMCIgcng9IjE0IiBmaWxsPSJ1cmwoI2cpIiBzdHJva2U9IiMzOGE4ZTAiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSI0MCIgeT0iODgiIHdpZHRoPSIxMzAiIGhlaWdodD0iNjQiIHJ4PSI2IiBmaWxsPSIjZmZmIiBzdHJva2U9IiMwYjZmYTQiLz48cmVjdCB4PSI0MCIgeT0iODgiIHdpZHRoPSIxMzAiIGhlaWdodD0iMTQiIHJ4PSI2IiBmaWxsPSIjMzhhOGUwIi8+Cjx0ZXh0IHg9IjEwNSIgeT0iMTI4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjMGI0YTZmIj5NaSBww6FnaW5hIHdlYjwvdGV4dD48dGV4dCB4PSIxMDUiIHk9IjE3MCIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzBiNGE2ZiI+QXBsaWNhY2nDs248L3RleHQ+CjxyZWN0IHg9IjI2NSIgeT0iNzAiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTEwIiByeD0iMTQiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzM4YThlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjM2MCIgeT0iMTEwIiBmb250LXNpemU9IjI2Ij7imqE8L3RleHQ+PHRleHQgeD0iMzYwIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwYjRhNmYiPlJFU1QgQVBJPC90ZXh0Pjx0ZXh0IHg9IjM2MCIgeT0iMTU2IiBmb250LXNpemU9IjExIiBmaWxsPSIjMmY2Nzg0Ij4oUG9zdGdSRVNULCBhdXRvbcOhdGljYSk8L3RleHQ+Cjx0ZXh0IHg9IjM2MCIgeT0iMTcyIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMmY2Nzg0Ij4rIEFQSSBrZXkgKyBSTFM8L3RleHQ+CjxyZWN0IHg9IjUzMCIgeT0iNzAiIHdpZHRoPSIxNzAiIGhlaWdodD0iMTEwIiByeD0iMTQiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzM4YThlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxlbGxpcHNlIGN4PSI2MTUiIGN5PSIxMDAiIHJ4PSIzOCIgcnk9IjExIiBmaWxsPSIjMzhhOGUwIi8+PHJlY3QgeD0iNTc3IiB5PSIxMDAiIHdpZHRoPSI3NiIgaGVpZ2h0PSIzNCIgZmlsbD0iIzdjYzhlZSIvPjxlbGxpcHNlIGN4PSI2MTUiIGN5PSIxMzQiIHJ4PSIzOCIgcnk9IjExIiBmaWxsPSIjN2NjOGVlIi8+Cjx0ZXh0IHg9IjYxNSIgeT0iMTYyIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGI0YTZmIj5Qb3N0Z3JlU1FMPC90ZXh0Pjx0ZXh0IHg9IjYxNSIgeT0iMTc2IiBmb250LXNpemU9IjEwIiBmaWxsPSIjMmY2Nzg0Ij50YWJsYSBwcm9kdWN0czwvdGV4dD4KPHBhdGggZD0iTTE5MiAxMDUgSDI2MiIgc3Ryb2tlPSIjMGI2ZmE0IiBzdHJva2Utd2lkdGg9IjMiIG1hcmtlci1lbmQ9InVybCgjYSkiLz48cGF0aCBkPSJNMjYyIDE0OCBIMTkyIiBzdHJva2U9IiMwYjZmYTQiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWRhc2hhcnJheT0iNiA1IiBtYXJrZXItZW5kPSJ1cmwoI2EpIi8+CjxwYXRoIGQ9Ik00NTcgMTA1IEg1MjciIHN0cm9rZT0iIzBiNmZhNCIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI2EpIi8+PHBhdGggZD0iTTUyNyAxNDggSDQ1NyIgc3Ryb2tlPSIjMGI2ZmE0IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNSIgbWFya2VyLWVuZD0idXJsKCNhKSIvPgo8dGV4dCB4PSIyMjciIHk9Ijk0IiBmb250LXNpemU9IjExIiBmaWxsPSIjMGI0YTZmIj5HRVQgLyBQT1NUPC90ZXh0Pjx0ZXh0IHg9IjIyNyIgeT0iMTcwIiBmb250LXNpemU9IjExIiBmaWxsPSIjMGI0YTZmIj5KU09OPC90ZXh0Pgo8dGV4dCB4PSI0OTIiIHk9Ijk0IiBmb250LXNpemU9IjExIiBmaWxsPSIjMGI0YTZmIj5jb25zdWx0YTwvdGV4dD48dGV4dCB4PSI0OTIiIHk9IjE3MCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzBiNGE2ZiI+ZmlsYXM8L3RleHQ+Cjx0ZXh0IHg9IjM2MCIgeT0iNDIiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwYjZmYTQiPkFzw60gdmlhamEgbGEgaW5mb3JtYWNpw7NuIGVuIFN1cGFiYXNlPC90ZXh0Pgo8dGV4dCB4PSIzNjAiIHk9IjIyOCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzJmNjc4NCI+RmxlY2hhIGxsZW5hOiBwZWRpZG8gwrcgRmxlY2hhIHB1bnRlYWRhOiByZXNwdWVzdGE8L3RleHQ+PC9nPjwvc3ZnPgo=" alt="Diagrama del flujo: aplicación web, REST API y base de datos PostgreSQL">
+                        <figcaption><strong>Figura 1.</strong> Cómo se conecta una aplicación con Supabase: la app pide datos a la REST API y esta consulta PostgreSQL.</figcaption>
+                    </figure>
+                    <figure class="figure-card card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNzIwIDMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlRhYmxhIHByb2R1Y3RzIGNvbiBjb2x1bW5hcyBpZCwgY3JlYXRlZF9hdCB5IG5hbWUsIGNvbiB0cmVzIHByb2R1Y3RvcyI+CjxyZWN0IHdpZHRoPSI3MjAiIGhlaWdodD0iMzAwIiByeD0iMTgiIGZpbGw9IiNmZmYiLz4KPGcgZm9udC1mYW1pbHk9IlBvcHBpbnMsQXJpYWwsc2Fucy1zZXJpZiI+Cjx0ZXh0IHg9IjM2MCIgeT0iMzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwYjZmYTQiPlRhYmxhICJwcm9kdWN0cyIgZW4gZWwgVGFibGUgRWRpdG9yPC90ZXh0Pgo8cmVjdCB4PSI2MCIgeT0iNjAiIHdpZHRoPSI2MDAiIGhlaWdodD0iMTkwIiByeD0iMTIiIGZpbGw9IiNmNGZiZmYiIHN0cm9rZT0iIzM4YThlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzOCIgcng9IjEyIiBmaWxsPSIjMzhhOGUwIi8+PHJlY3QgeD0iNjAiIHk9IjgwIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjE4IiBmaWxsPSIjMzhhOGUwIi8+CjxnIGZpbGw9IiNmZmYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI3MDAiPjx0ZXh0IHg9Ijg1IiB5PSI4NCI+aWQ8L3RleHQ+PHRleHQgeD0iMTcwIiB5PSI4NCI+Y3JlYXRlZF9hdDwvdGV4dD48dGV4dCB4PSI0MzAiIHk9Ijg0Ij5uYW1lPC90ZXh0PjwvZz4KPGcgZm9udC1zaXplPSIxMyIgZmlsbD0iIzBiNGE2ZiI+Cjx0ZXh0IHg9Ijg1IiB5PSIxMjgiPjE8L3RleHQ+PHRleHQgeD0iMTcwIiB5PSIxMjgiPjIwMjYtMTAtMDggMjA6MDE6MTI8L3RleHQ+PHRleHQgeD0iNDMwIiB5PSIxMjgiPmxhcHRvcDwvdGV4dD4KPGxpbmUgeDE9IjYwIiB5MT0iMTQ0IiB4Mj0iNjYwIiB5Mj0iMTQ0IiBzdHJva2U9IiNjZmVhZmEiLz4KPHRleHQgeD0iODUiIHk9IjE3MiI+MjwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjE3MiI+MjAyNi0xMC0wOCAyMDowMjo0MDwvdGV4dD48dGV4dCB4PSI0MzAiIHk9IjE3MiI+bW9uaXRvcjwvdGV4dD4KPGxpbmUgeDE9IjYwIiB5MT0iMTg4IiB4Mj0iNjYwIiB5Mj0iMTg4IiBzdHJva2U9IiNjZmVhZmEiLz4KPHRleHQgeD0iODUiIHk9IjIxNiI+MzwvdGV4dD48dGV4dCB4PSIxNzAiIHk9IjIxNiI+MjAyNi0xMC0wOCAyMDowMzowNTwvdGV4dD48dGV4dCB4PSI0MzAiIHk9IjIxNiI+bW91c2U8L3RleHQ+PC9nPgo8dGV4dCB4PSIzNjAiIHk9IjI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzJmNjc4NCI+Q2FkYSBmaWxhIGVzIHVuIHByb2R1Y3RvOyBjYWRhIGNvbHVtbmEgZXMgdW4gZGF0byAoaWQsIGZlY2hhLCBub21icmUpLjwvdGV4dD48L2c+PC9zdmc+Cg==" alt="Tabla products con las filas laptop, monitor y mouse">
+                        <figcaption><strong>Figura 2.</strong> La tabla <code>products</code> del ejemplo, creada en el Table Editor.</figcaption>
+                    </figure>
+                    <figure class="figure-card card">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNzIwIDMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkNvbXBhcmFjacOzbjogc2luIFJMUyB0b2RvcyB2ZW4gdG9kbzsgY29uIFJMUyBzaW4gcG9sw610aWNhcyBsYSByZXNwdWVzdGEgZXMgdW5hIGxpc3RhIHZhY8OtYTsgY29uIHBvbMOtdGljYSBzb2xvIHBhc2FuIGxvcyBwZXJtaXRpZG9zIj4KPGRlZnM+PG1hcmtlciBpZD0iYiIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjEwIiByZWZYPSI4IiByZWZZPSI1IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzBiNmZhNCIvPjwvbWFya2VyPjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjcyMCIgaGVpZ2h0PSIzMDAiIHJ4PSIxOCIgZmlsbD0iI2ZmZiIvPgo8ZyBmb250LWZhbWlseT0iUG9wcGlucyxBcmlhbCxzYW5zLXNlcmlmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4KPHRleHQgeD0iMzYwIiB5PSIzNCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzBiNmZhNCI+UXXDqSBoYWNlIFJMUyAoUm93IExldmVsIFNlY3VyaXR5KTwvdGV4dD4KPGc+PHJlY3QgeD0iMjAiIHk9IjU2IiB3aWR0aD0iMjE1IiBoZWlnaHQ9IjIwMCIgcng9IjE0IiBmaWxsPSIjZjRmYmZmIiBzdHJva2U9IiMzOGE4ZTAiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSIxMjciIHk9Ijg2IiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGI0YTZmIj4xLiBSTFMgZGVzYWN0aXZhZG88L3RleHQ+Cjx0ZXh0IHg9IjEyNyIgeT0iMTI4IiBmb250LXNpemU9IjM4Ij7wn5STPC90ZXh0Pgo8dGV4dCB4PSIxMjciIHk9IjE2OCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzJmNjc4NCI+Q3VhbHF1aWVyYSBjb24gbGEgQVBJIGtleTwvdGV4dD48dGV4dCB4PSIxMjciIHk9IjE4NCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzJmNjc4NCI+cHVlZGUgbGVlciB5IG1vZGlmaWNhcjwvdGV4dD4KPHRleHQgeD0iMTI3IiB5PSIyMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNiMzI2MWUiPltsYXB0b3AsIG1vbml0b3IsIG1vdXNlXTwvdGV4dD48L2c+CjxnPjxyZWN0IHg9IjI1MiIgeT0iNTYiIHdpZHRoPSIyMTUiIGhlaWdodD0iMjAwIiByeD0iMTQiIGZpbGw9IiNmNGZiZmYiIHN0cm9rZT0iIzM4YThlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjM2MCIgeT0iODYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwYjRhNmYiPjIuIFJMUyBhY3Rpdm8sIHNpbiBwb2zDrXRpY2FzPC90ZXh0Pgo8dGV4dCB4PSIzNjAiIHk9IjEyOCIgZm9udC1zaXplPSIzOCI+8J+UkjwvdGV4dD4KPHRleHQgeD0iMzYwIiB5PSIxNjgiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMyZjY3ODQiPk5hZGllIHRpZW5lIHBlcm1pc286PC90ZXh0Pjx0ZXh0IHg9IjM2MCIgeT0iMTg0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjMmY2Nzg0Ij5sYSBBUEkgbm8gbXVlc3RyYSBmaWxhczwvdGV4dD4KPHRleHQgeD0iMzYwIiB5PSIyMjYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwYjZmYTQiPlsgXTwvdGV4dD48L2c+CjxnPjxyZWN0IHg9IjQ4NSIgeT0iNTYiIHdpZHRoPSIyMTUiIGhlaWdodD0iMjAwIiByeD0iMTQiIGZpbGw9IiNmNGZiZmYiIHN0cm9rZT0iIzM4YThlMCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjU5MiIgeT0iODYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwYjRhNmYiPjMuIFJMUyArIHBvbMOtdGljYTwvdGV4dD4KPHRleHQgeD0iNTkyIiB5PSIxMjgiIGZvbnQtc2l6ZT0iMzgiPvCfl53vuI88L3RleHQ+Cjx0ZXh0IHg9IjU5MiIgeT0iMTY4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjMmY2Nzg0Ij5Tb2xvIHBhc2EgcXVpZW4gY3VtcGxlPC90ZXh0Pjx0ZXh0IHg9IjU5MiIgeT0iMTg0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjMmY2Nzg0Ij5sYSByZWdsYSAoZWouIGF1dGgudWlkKCkpPC90ZXh0Pgo8dGV4dCB4PSI1OTIiIHk9IjIyNiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFhN2YzNyI+W2ZpbGFzIHBlcm1pdGlkYXNdPC90ZXh0PjwvZz4KPHBhdGggZD0iTTIzNyAxNTYgSDI1MCIgc3Ryb2tlPSIjMGI2ZmE0IiBzdHJva2Utd2lkdGg9IjMiIG1hcmtlci1lbmQ9InVybCgjYikiLz48cGF0aCBkPSJNNDcwIDE1NiBINDgzIiBzdHJva2U9IiMwYjZmYTQiIHN0cm9rZS13aWR0aD0iMyIgbWFya2VyLWVuZD0idXJsKCNiKSIvPgo8dGV4dCB4PSIzNjAiIHk9IjI4NCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzJmNjc4NCI+SWx1c3RyYWNpw7NuIHByb3BpYSBiYXNhZGEgZW4gbGEgcGFydGUgZGUgc2VndXJpZGFkIGRlbCB2aWRlbzwvdGV4dD48L2c+PC9zdmc+Cg==" alt="Tres estados de seguridad: sin RLS, RLS sin políticas y RLS con política">
+                        <figcaption><strong>Figura 3.</strong> Ejemplo de RLS: sin reglas todo es visible; con RLS y sin políticas la respuesta es vacía; con política solo pasan los permitidos.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aplicación práctica -->
+        <section id="aplicacion" class="content-card card">
+            <div class="card-header"><h2>Aplicación Práctica (Código JS)</h2></div>
+            <div class="card-body">
+                <p>Lo aprendido se puede usar para mostrar en una página web la lista de productos guardados en Supabase. Procedimiento:</p>
+                <ol class="steps">
+                    <li>Crear el proyecto y la tabla <code>products</code>.</li>
+                    <li>Activar RLS y crear la política de lectura.</li>
+                    <li>Copiar la URL del proyecto y la clave pública (anon).</li>
+                    <li>Consultar los datos desde JavaScript.</li>
+                </ol>
+                <p>Ejemplo corto de código con <code>fetch</code> (los valores entre &lt; &gt; se reemplazan por los del proyecto):</p>
                 <div class="code-wrapper card">
-                    <pre><code>const
+<pre><code>const URL = "https://&lt;tu-proyecto&gt;.supabase.co/rest/v1/products";
+const KEY = "&lt;tu-clave-anon&gt;";
+
+async function cargarProductos() {
+  const respuesta = await fetch(URL + "?select=*", {
+    headers: {
+      apikey: KEY,
+      Authorization: "Bearer " + KEY
+    }
+  });
+  const productos = await respuesta.json();
+  console.log(productos); // [{ id: 1, name: "laptop" }, ...]
+}
+
+cargarProductos();</code></pre>
+                </div>
+                <p>Si RLS está activo y no existe una política de lectura, <code>productos</code> será una lista vacía <code>[]</code>.</p>
+            </div>
+        </section>
+
+        <!-- Conclusión -->
+        <section id="conclusion" class="content-card card">
+            <div class="card-header"><h2>Conclusión Personal</h2></div>
+            <div class="card-body">
+                <p>Este video me mostró que hacer un backend ya no requiere programar un servidor desde cero: con Supabase se crea una base de datos y una API en pocos minutos. Me pareció muy útil para proyectos de la escuela y para el futuro como técnica en informática.</p>
+                <p>Lo que más me quedó es que <strong>la seguridad es tan importante como la funcionalidad</strong>. Entender RLS, políticas y tokens me ayuda a pensar en proteger los datos desde el principio de cada proyecto. Mi próximo paso es practicar creando una tabla propia y conectarla a una página web.</p>
+            </div>
+        </section>
+
+        <!-- Fuentes -->
+        <section id="fuentes" class="content-card card">
+            <div class="card-header"><h2>Fuentes y Referencias</h2></div>
+            <div class="card-body">
+                <ul class="styled-list">
+                    <li>Video analizado (Fazt Code): <a href="https://www.youtube.com/watch?v=pi33WDrgfpI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pi33WDrgfpI</a></li>
+                    <li>Documentación de Supabase: <a href="https://supabase.com/docs" target="_blank" rel="noopener">supabase.com/docs</a></li>
+                    <li>Row Level Security en Supabase: <a href="https://supabase.com/docs/guides/auth/row-level-security" target="_blank" rel="noopener">supabase.com/docs/guides/auth/row-level-security</a></li>
+                    <li>PostgREST: <a href="https://postgrest.org" target="_blank" rel="noopener">postgrest.org</a></li>
+                    <li>JSON Web Tokens: <a href="https://jwt.io" target="_blank" rel="noopener">jwt.io</a></li>
+                    <li>Postman: <a href="https://www.postman.com" target="_blank" rel="noopener">postman.com</a></li>
+                    <li>Imágenes: ilustraciones propias (diagramas SVG) creadas para este trabajo.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p class="school">Colegio Nacional EMD Asunción Escalada - Bachillerato Técnico en Informática</p>
+            <p>Sofia Gimenez · 2.º 6ta BTI · Software / Desarrollo Web</p>
+            <p>Trabajo Práctico: Video y Página Web · 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
